@@ -1,0 +1,489 @@
+{
+  "id": "04a9d462-af9e-4e61-9442-7ee04f27a797",
+  "version": "2.0",
+  "name": "EPAM-EXT_2021",
+  "url": "https://cake64.ru/",
+  "tests": [{
+    "id": "009a8867-bef5-49da-96c9-b58e58a036ea",
+    "name": "1. First launching a web application",
+    "commands": [{
+      "id": "1ae799d5-bd0d-41e2-a76e-510111cee712",
+      "comment": "",
+      "command": "open",
+      "target": "https://cake64.ru/",
+      "targets": [],
+      "value": ""
+    }, {
+      "id": "754bf0b3-a16b-4a7e-a431-603691dde1f7",
+      "comment": "",
+      "command": "click",
+      "target": "//*[@class=\"new-popup__close new-popup__set-cookie-metrika\"]",
+      "targets": [],
+      "value": ""
+    }, {
+      "id": "3a8dce38-f204-4e88-9b74-994cfb827229",
+      "comment": "",
+      "command": "waitForElementPresent",
+      "target": "//*[@id=\"cont_catalog_menu_LkGdQn\"]",
+      "targets": [],
+      "value": "30000"
+    }]
+  }, {
+    "id": "535000dd-296d-48e8-8957-00191627930b",
+    "name": "2. Account authorization",
+    "commands": [{
+      "id": "94158f17-42dd-4367-b05e-68eb2f142886",
+      "comment": "",
+      "command": "open",
+      "target": "https://cake64.ru/",
+      "targets": [],
+      "value": ""
+    }, {
+      "id": "7fc100a8-6cb6-4cc3-8c45-4dab5c64f7bc",
+      "comment": "",
+      "command": "click",
+      "target": "//*[contains( text(),'Войти')]",
+      "targets": [
+        ["css=.remastered__login-name > a", "css:finder"],
+        ["xpath=//a[contains(text(),'Войти')]", "xpath:link"],
+        ["xpath=//div[@id='bx_basketFKauiI']/div/div/div/a", "xpath:idRelative"],
+        ["xpath=//a[contains(@href, '/login?login=yes&backurl=%2F')]", "xpath:href"],
+        ["xpath=//div/div/div/div/div/a", "xpath:position"]
+      ],
+      "value": ""
+    }, {
+      "id": "2ff999be-af88-4696-979f-2abe37e7e579",
+      "comment": "",
+      "command": "sendKeys",
+      "target": "//input[@name=\"USER_LOGIN\"]",
+      "targets": [],
+      "value": "test12345"
+    }, {
+      "id": "44d2ef85-fcdb-44ca-84ec-1c81d62fa273",
+      "comment": "",
+      "command": "sendKeys",
+      "target": "//input[@name=\"USER_PASSWORD\"]",
+      "targets": [],
+      "value": "qwerty12345"
+    }, {
+      "id": "9c6d7a51-c588-4ac9-bda7-3ec7a70cf346",
+      "comment": "",
+      "command": "click",
+      "target": "//*[@class=\"btn btn-primary\"]",
+      "targets": [],
+      "value": ""
+    }, {
+      "id": "7fcce3c2-40ab-4d81-8558-aad70f01eba3",
+      "comment": "",
+      "command": "assertText",
+      "target": "//*[@class=\"remastered__login-name\"]",
+      "targets": [],
+      "value": "TEST12345"
+    }]
+  }, {
+    "id": "83ccad8f-213b-438f-8b97-671773e30b43",
+    "name": "3. Opening the product page",
+    "commands": [{
+      "id": "a401cb05-1799-47e0-847c-39fda7ace30c",
+      "comment": "",
+      "command": "open",
+      "target": "https://cake64.ru/",
+      "targets": [],
+      "value": ""
+    }, {
+      "id": "5b7638af-d953-49f4-b09f-58817bac1a13",
+      "comment": "",
+      "command": "click",
+      "target": "//*[@id=\"bx_3966226736_463942_7e1b8e3524755c391129a9d7e6f2d206_secondpict\"]",
+      "targets": [],
+      "value": ""
+    }, {
+      "id": "c87da7eb-85bd-4d9e-ae05-e41e72031ad8",
+      "comment": "",
+      "command": "assertText",
+      "target": "//*[@id=\"bx_117848907_463942_add_basket_link\"]/span",
+      "targets": [],
+      "value": "В КОРЗИНУ "
+    }]
+  }, {
+    "id": "a9483946-cd57-4fcf-a9e7-4037834bb807",
+    "name": "4. Adding an item to the cart ",
+    "commands": [{
+      "id": "890604a2-2ba5-45ac-8fe5-ef0e9ea40584",
+      "comment": "",
+      "command": "open",
+      "target": "https://cake64.ru/",
+      "targets": [],
+      "value": ""
+    }, {
+      "id": "6f1430fe-dcbb-4a36-8ef9-3d2af5d84f39",
+      "comment": "",
+      "command": "click",
+      "target": "//*[@id=\"bx_3966226736_463942_7e1b8e3524755c391129a9d7e6f2d206_secondpict\"]",
+      "targets": [],
+      "value": ""
+    }, {
+      "id": "42ed6f53-aa9e-435f-aea2-396e6032c040",
+      "comment": "",
+      "command": "click",
+      "target": "//*[@id=\"bx_117848907_463942_add_basket_link\"]",
+      "targets": [],
+      "value": ""
+    }, {
+      "id": "bf91d21d-a796-4ae0-92d1-fc7cb39bf773",
+      "comment": "",
+      "command": "click",
+      "target": "//*[@class=\"btn btn-default btn-buy btn-sm\"]",
+      "targets": [],
+      "value": ""
+    }, {
+      "id": "3b7ea2c0-9a18-4c64-a840-4fcdb946c06f",
+      "comment": "",
+      "command": "assertText",
+      "target": "//*[@id=\"basket-root\"]/div[1]/div/div/div/div/div[1]/div/div[1]",
+      "targets": [],
+      "value": "Итого:"
+    }]
+  }, {
+    "id": "795df402-484a-4a11-8965-6ae6e849dfec",
+    "name": "5. Product search",
+    "commands": [{
+      "id": "b14e2eeb-8a01-4ee9-8792-d1249bb92b25",
+      "comment": "",
+      "command": "open",
+      "target": "https://cake64.ru/",
+      "targets": [],
+      "value": ""
+    }, {
+      "id": "27e4609b-4ce4-4299-b401-e6ae3fd178b8",
+      "comment": "",
+      "command": "sendKeys",
+      "target": "//input[@id=\"title-search-input\"]",
+      "targets": [],
+      "value": "наполеон"
+    }, {
+      "id": "5c0b068c-855a-4991-8f5f-8b7b5863a013",
+      "comment": "",
+      "command": "click",
+      "target": "//*[@class=\"btn btn-default\"]",
+      "targets": [],
+      "value": ""
+    }, {
+      "id": "4a91d364-940b-4495-b1e0-739783e3439b",
+      "comment": "",
+      "command": "assertText",
+      "target": "//*[@class=\"bx-breadcrumb-item\"]",
+      "targets": [],
+      "value": "Каталог тортов"
+    }]
+  }, {
+    "id": "134a2eac-814d-42be-b07d-e692ca217619",
+    "name": "6. Filling in the fields for placing an order being authorized",
+    "commands": [{
+      "id": "ad8e5934-c2b8-4d16-a160-3cfcb1e217ee",
+      "comment": "",
+      "command": "open",
+      "target": "https://cake64.ru/",
+      "targets": [],
+      "value": ""
+    }, {
+      "id": "188f57ae-5118-4130-8323-099568e4c08a",
+      "comment": "",
+      "command": "click",
+      "target": "//*[@id=\"bx_3966226736_463942_7e1b8e3524755c391129a9d7e6f2d206_secondpict\"]",
+      "targets": [],
+      "value": ""
+    }, {
+      "id": "df8a5a0f-c05f-4f86-993c-e04e5c50a7ee",
+      "comment": "",
+      "command": "click",
+      "target": "//*[@id=\"bx_117848907_463942_add_basket_link\"]",
+      "targets": [],
+      "value": ""
+    }, {
+      "id": "776dd622-381d-42cb-a0c9-327de51f13bc",
+      "comment": "",
+      "command": "click",
+      "target": "//*[@class=\"btn btn-default btn-buy btn-sm\"]",
+      "targets": [],
+      "value": ""
+    }, {
+      "id": "d32f5c05-0334-4ea4-bf1a-45060823ecbb",
+      "comment": "",
+      "command": "click",
+      "target": "//*[@class=\"btn btn-lg btn-default basket-btn-checkout\"]",
+      "targets": [],
+      "value": ""
+    }, {
+      "id": "e7da9b8f-2428-4140-86a5-4c00b2a8936f",
+      "comment": "",
+      "command": "click",
+      "target": "//*[@class=\"pull-right btn btn-default btn-md\"]",
+      "targets": [],
+      "value": ""
+    }, {
+      "id": "718ca746-45b2-4646-a8ad-97e6e535791d",
+      "comment": "",
+      "command": "click",
+      "target": "//*[@class=\"pull-right btn btn-default btn-md\"]",
+      "targets": [],
+      "value": ""
+    }, {
+      "id": "4e8347c3-d38c-45cd-afa2-160ef459a921",
+      "comment": "",
+      "command": "click",
+      "target": "//*[@class=\"pull-right btn btn-default btn-md\"]",
+      "targets": [],
+      "value": ""
+    }, {
+      "id": "54c8ee6b-b4ac-4f29-848e-2ba08c058426",
+      "comment": "",
+      "command": "setSpeed",
+      "target": "",
+      "targets": [],
+      "value": "3000"
+    }, {
+      "id": "49e3d401-b0af-4654-8b2b-46121826f9f3",
+      "comment": "",
+      "command": "waitForElementPresent",
+      "target": "//a[contains(@class, \"btn btn-sm btn-default\")]",
+      "targets": [],
+      "value": "30000"
+    }, {
+      "id": "6ffb231a-1469-4c3c-bdcc-656209ea3ba4",
+      "comment": "",
+      "command": "click",
+      "target": "//*[@class=\"btn btn-sm btn-default\"]",
+      "targets": [],
+      "value": ""
+    }, {
+      "id": "ef948175-606b-4626-91d3-b321b425eba1",
+      "comment": "",
+      "command": "type",
+      "target": "//input[@id=\"soa-property-61\"]",
+      "targets": [
+        ["id=soa-property-61", "id"],
+        ["name=ORDER_PROP_61", "name"],
+        ["css=#soa-property-61", "css:finder"],
+        ["xpath=//input[@id='soa-property-61']", "xpath:attributes"],
+        ["xpath=//div[@id='bx-soa-properties']/div[2]/div[2]/div/div/div[2]/input", "xpath:idRelative"],
+        ["xpath=//div[2]/input", "xpath:position"]
+      ],
+      "value": ""
+    }, {
+      "id": "c9f85973-b5d8-4559-ae17-59af15762f4f",
+      "comment": "",
+      "command": "sendKeys",
+      "target": "//input[@id=\"soa-property-61\"]",
+      "targets": [],
+      "value": "Андрей"
+    }, {
+      "id": "dc90c51d-909c-4fbf-bd94-ca55290c22d0",
+      "comment": "",
+      "command": "type",
+      "target": "//input[@id=\"soa-property-62\"]",
+      "targets": [
+        ["id=soa-property-62", "id"],
+        ["name=ORDER_PROP_62", "name"],
+        ["css=#soa-property-62", "css:finder"],
+        ["xpath=//input[@id='soa-property-62']", "xpath:attributes"],
+        ["xpath=//div[@id='bx-soa-properties']/div[2]/div[2]/div/div[2]/div[2]/input", "xpath:idRelative"],
+        ["xpath=//div[2]/div[2]/input", "xpath:position"]
+      ],
+      "value": ""
+    }, {
+      "id": "54b7b040-52ff-4dd8-a81a-e561fa16ddcb",
+      "comment": "",
+      "command": "sendKeys",
+      "target": "//input[@id=\"soa-property-62\"]",
+      "targets": [],
+      "value": "79271058376"
+    }, {
+      "id": "4dc86ba0-6535-4fa5-a1fd-51b4d59ec80f",
+      "comment": "",
+      "command": "sendKeys",
+      "target": "//input[@id=\"soa-property-68\"]",
+      "targets": [],
+      "value": "01.02.2022 09:13:00"
+    }, {
+      "id": "f1e30eb6-73a7-4a73-951d-05604d27b348",
+      "comment": "",
+      "command": "assertValue",
+      "target": "//input[@id='soa-property-61']",
+      "targets": [],
+      "value": "Андрей"
+    }, {
+      "id": "dd481724-1bc5-42e7-a6ab-ada0fc80d6b3",
+      "comment": "",
+      "command": "assertValue",
+      "target": "//*[@id=\"soa-property-62\"]",
+      "targets": [],
+      "value": "79271058376"
+    }, {
+      "id": "5fdf3bc8-8ca5-46b5-809c-0ca9de211654",
+      "comment": "",
+      "command": "assertValue",
+      "target": "//*[@id=\"soa-property-68\"]",
+      "targets": [],
+      "value": "01.02.2022 09:13:00"
+    }]
+  }, {
+    "id": "291199fb-502a-4542-a980-02fcc3b1e6d7",
+    "name": "7. Log out from the account",
+    "commands": [{
+      "id": "0c592968-f409-4d65-b945-cad7ef69afa6",
+      "comment": "",
+      "command": "open",
+      "target": "https://cake64.ru/",
+      "targets": [],
+      "value": ""
+    }, {
+      "id": "887bfb54-9939-4909-a0a4-dbbd3c662bc6",
+      "comment": "",
+      "command": "click",
+      "target": "//*[@class=\"remastered__login-exit\"]",
+      "targets": [],
+      "value": ""
+    }, {
+      "id": "7fc35e49-c753-452b-b29e-c97b6dee7f57",
+      "comment": "",
+      "command": "assertText",
+      "target": "//*[@class=\"remastered__login-exit\"]",
+      "targets": [],
+      "value": "Регистрация"
+    }]
+  }, {
+    "id": "22bea973-506a-44a5-be29-deb26467d542",
+    "name": "8. Filling in the fields for placing an order without authorization",
+    "commands": [{
+      "id": "b88f38fa-eafc-410a-93db-55638b39a827",
+      "comment": "",
+      "command": "open",
+      "target": "https://cake64.ru/",
+      "targets": [],
+      "value": ""
+    }, {
+      "id": "81740899-94db-4534-8499-bbcd244fe5db",
+      "comment": "",
+      "command": "click",
+      "target": "//*[@id=\"bx_3966226736_463942_7e1b8e3524755c391129a9d7e6f2d206_secondpict\"]",
+      "targets": [],
+      "value": ""
+    }, {
+      "id": "fc7bfe3b-2af1-4b4e-8319-bc1e118fcc2a",
+      "comment": "",
+      "command": "click",
+      "target": "//*[@id=\"bx_117848907_463942_add_basket_link\"]",
+      "targets": [],
+      "value": ""
+    }, {
+      "id": "3f638c74-2cb4-4b90-93ec-b22e16b7a886",
+      "comment": "",
+      "command": "click",
+      "target": "//*[@class=\"btn btn-default btn-buy btn-sm\"]",
+      "targets": [],
+      "value": ""
+    }, {
+      "id": "c708d063-5468-43cb-9398-9daa7ccdf5f0",
+      "comment": "",
+      "command": "click",
+      "target": "//*[@class=\"btn btn-lg btn-default basket-btn-checkout\"]",
+      "targets": [],
+      "value": ""
+    }, {
+      "id": "93976ac2-a0f2-4550-b168-1205e7f293cd",
+      "comment": "",
+      "command": "click",
+      "target": "//*[@class=\"pull-right btn btn-default btn-md\"]",
+      "targets": [],
+      "value": ""
+    }, {
+      "id": "ef19b354-1164-4be9-b30c-98ffb8f7d96d",
+      "comment": "",
+      "command": "click",
+      "target": "//*[@class=\"pull-right btn btn-default btn-md\"]",
+      "targets": [],
+      "value": ""
+    }, {
+      "id": "0bdf32eb-1a67-4d61-865d-43374982f721",
+      "comment": "",
+      "command": "click",
+      "target": "//*[@class=\"pull-right btn btn-default btn-md\"]",
+      "targets": [],
+      "value": ""
+    }, {
+      "id": "973d9dca-8ef3-476e-bd17-b3c623ed88f8",
+      "comment": "",
+      "command": "setSpeed",
+      "target": "",
+      "targets": [],
+      "value": "3000"
+    }, {
+      "id": "4a01bfcf-08b0-48a6-810c-0a7bb034d6ee",
+      "comment": "",
+      "command": "waitForElementPresent",
+      "target": "//a[contains(@class, \"btn btn-sm btn-default\")]",
+      "targets": [],
+      "value": "30000"
+    }, {
+      "id": "d82f4cf4-9fdc-48dd-bc82-85e3e5857366",
+      "comment": "",
+      "command": "click",
+      "target": "//*[@class=\"btn btn-sm btn-default\"]",
+      "targets": [],
+      "value": ""
+    }, {
+      "id": "b8226b32-7af4-47d5-934b-2007a5f532d1",
+      "comment": "",
+      "command": "sendKeys",
+      "target": "//input[@id=\"soa-property-61\"]",
+      "targets": [],
+      "value": "Андрей"
+    }, {
+      "id": "b55bee9f-e168-48b8-b3a5-b632d2819857",
+      "comment": "",
+      "command": "sendKeys",
+      "target": "//input[@id=\"soa-property-62\"]",
+      "targets": [],
+      "value": "79271058376"
+    }, {
+      "id": "4f765716-1bfd-4c4f-a6ce-f4ed787a9956",
+      "comment": "",
+      "command": "sendKeys",
+      "target": "//input[@id=\"soa-property-68\"]",
+      "targets": [],
+      "value": "01.02.2022 09:13:00"
+    }, {
+      "id": "6fba1455-1720-49ee-817e-f27810dd20d3",
+      "comment": "",
+      "command": "assertValue",
+      "target": "//input[@id='soa-property-61']",
+      "targets": [],
+      "value": "Андрей"
+    }, {
+      "id": "e1d348cc-1d75-4aca-9d23-1886f41e23b1",
+      "comment": "",
+      "command": "assertValue",
+      "target": "//*[@id=\"soa-property-62\"]",
+      "targets": [],
+      "value": "79271058376"
+    }, {
+      "id": "34ccee37-3ec9-4d93-ad93-1565299188d4",
+      "comment": "",
+      "command": "assertValue",
+      "target": "//*[@id=\"soa-property-68\"]",
+      "targets": [],
+      "value": "01.02.2022 09:13:00"
+    }]
+  }],
+  "suites": [{
+    "id": "65e27aa2-ad8b-45a8-842d-e8a39c18e81d",
+    "name": "Default Suite",
+    "persistSession": false,
+    "parallel": false,
+    "timeout": 300,
+    "tests": ["009a8867-bef5-49da-96c9-b58e58a036ea"]
+  }],
+  "urls": ["https://cake64.ru/"],
+  "plugins": []
+}
